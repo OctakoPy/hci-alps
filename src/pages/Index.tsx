@@ -736,35 +736,35 @@ const Index = () => {
             className={`flex items-center justify-between gap-4 pt-8 mb-16 text-base md:text-lg scroll-animate scroll-fade-up ${prototypeTimelineSection.isVisible ? 'visible' : ''}`}
           >
             <div className="text-center flex-1">
-              <div className="font-semibold mb-2 text-lg md:text-xl">Initial</div>
+              <div className="font-semibold mb-2 text-lg md:text-xl">Initial Paper Prototype</div>
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto">
                 <FileEdit className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
             </div>
             <ArrowRight className="text-muted-foreground w-6 h-6 md:w-8 md:h-8 flex-shrink-0" />
             <div className="text-center flex-1">
-              <div className="font-semibold mb-2 text-lg md:text-xl">Heuristics</div>
+              <div className="font-semibold mb-2 text-lg md:text-xl">Heuristics Evaluation</div>
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto">
                 <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
             </div>
             <ArrowRight className="text-muted-foreground w-6 h-6 md:w-8 md:h-8 flex-shrink-0" />
             <div className="text-center flex-1">
-              <div className="font-semibold mb-2 text-lg md:text-xl">Paper</div>
+              <div className="font-semibold mb-2 text-lg md:text-xl">Final Paper Prototype</div>
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto">
                 <FileEdit className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
             </div>
             <ArrowRight className="text-muted-foreground w-6 h-6 md:w-8 md:h-8 flex-shrink-0" />
             <div className="text-center flex-1">
-              <div className="font-semibold mb-2 text-lg md:text-xl">User Testing</div>
+              <div className="font-semibold mb-2 text-lg md:text-xl">User <br></br>Testing</div>
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto">
                 <Users className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
             </div>
             <ArrowRight className="text-muted-foreground w-6 h-6 md:w-8 md:h-8 flex-shrink-0" />
             <div className="text-center flex-1">
-              <div className="font-semibold mb-2 text-lg md:text-xl">Digital</div>
+              <div className="font-semibold mb-2 text-lg md:text-xl">Digital <br></br> Mockup</div>
               <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto">
                 <Target className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
