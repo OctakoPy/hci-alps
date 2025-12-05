@@ -98,6 +98,13 @@ const Navigation = () => {
               Our Journey
             </a>
             <a 
+              href="/presentation" 
+              className="block text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Presentation
+            </a>
+            <a 
               href="/roadmap" 
               className="block text-sm font-medium hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}

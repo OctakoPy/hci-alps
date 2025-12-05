@@ -21,7 +21,7 @@ import friendlyalpsCat from "@/assets/doublecat.png";
 import goodPosture from "@/assets/alps-logo.png";
 import interview from "@/assets/interview.png";
 
-const Index = () => {
+const Presentation = () => {
   // Scroll animation hooks for all sections
   const heroSection = useScrollAnimation();
   const timelineSection = useScrollAnimation();
@@ -1056,4 +1056,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Presentation;

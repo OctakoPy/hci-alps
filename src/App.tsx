@@ -14,6 +14,7 @@ import OurJourneyIndex from "./pages/OurJourney/Index";
 import DesignResearch from "./pages/OurJourney/DesignResearch";
 import DesignIdeation from "./pages/OurJourney/DesignIdeation";
 import PrototypeTesting from "./pages/OurJourney/PrototypeTesting";
+import Presentation from "./pages/Presentation";
 
 const queryClient = new QueryClient();
 
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/our-journey/design-research" element={<DesignResearch />} />
           <Route path="/our-journey/design-ideation" element={<DesignIdeation />} />
           <Route path="/our-journey/prototype-testing" element={<PrototypeTesting />} />
+          <Route path="/presentation" element={<Presentation />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

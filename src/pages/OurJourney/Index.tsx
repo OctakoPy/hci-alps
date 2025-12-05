@@ -281,6 +281,27 @@ const OurJourneyIndex = () => {
         </div>
       </section>
 
+      {/* Presentation Link Section */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 to-primary/10 border-y border-border">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Want to See Everything in <span className="text-primary">One Place?</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              View our complete design journey from research to final prototype in a single, comprehensive presentation.
+            </p>
+            <Link 
+              to="/presentation" 
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg hover:bg-primary-hover transition-colors"
+            >
+              View Complete Presentation
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
 
 
       <Footer />
