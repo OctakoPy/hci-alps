@@ -669,7 +669,7 @@ const Index = () => {
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center" style={{transform: 'translateY(2px)'}}>
                 <span className="text-lg font-bold text-primary">3</span>
               </div>
-              <h2 className="text-3xl font-bold">User Scenarios & Storyboards</h2>
+              <h2 className="text-4xl md:text-5xl font-bold">User Scenarios & Storyboards</h2>
             </div>
             
             <div className="space-y-8">
