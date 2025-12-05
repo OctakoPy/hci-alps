@@ -798,43 +798,55 @@ const Index = () => {
           </div>
 
           {/* Heuristics Summary */}
-          <div 
-            ref={heuristicsSection.ref}
-            className={`mb-16 scroll-animate scroll-fade-up ${heuristicsSection.isVisible ? 'visible' : ''}`}
-          >
-            <div className="flex items-center gap-4 mb-6 justify-center">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center" style={{transform: 'translateY(2px)'}}>
-                <span className="text-lg font-bold text-primary">2</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold">Heuristic Evaluation Summary</h2>
+                {/* Section 2: Heuristics Summary */}
+
+        <div 
+          ref={heuristicsSection.ref}
+          className={`container mx-auto px-4 mb-16 max-w-5xl scroll-animate scroll-fade-up ${heuristicsSection.isVisible ? 'visible' : ''}`}
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+              <span className="text-lg font-bold text-primary">2</span>
             </div>
-            
-            <div className="bg-card border border-border rounded-lg p-10 space-y-8">
-              <div>
-                <h3 className="text-xl font-bold mb-6">Results Summary:</h3>
+            <h2 className="text-4xl md:text-5xl font-bold ml-2">Heuristic Evaluation Summary</h2>
+          </div>
+          
+          <div className="bg-card border border-border rounded-lg p-10 space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Most Violated Principles:</h3>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
+                  <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-xl">1. Consistency and Standards (2 major)</h4>
+                  <ul className="space-y-2 text-base ml-4">
+                    <li>• Inconsistent cat visuals across screens</li>
+                    <li>• Mixed close button styles</li>
+                  </ul>
+                  <p className="mt-3 text-base"><strong>Impact:</strong> User confusion and reduced trust</p>
+                </div>
                 
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="text-center p-4 bg-red-50 dark:bg-red-950/20 rounded-lg">
-                    <div className="text-3xl font-bold text-red-600 mb-2">4</div>
-                    <div className="text-sm text-red-700 dark:text-red-300">Major Issues</div>
-                  </div>
-                  <div className="text-center p-4 bg-orange-50 dark:bg-orange-950/20 rounded-lg">
-                    <div className="text-3xl font-bold text-orange-600 mb-2">7</div>
-                    <div className="text-sm text-orange-700 dark:text-orange-300">Moderate Issues</div>
-                  </div>
-                  <div className="text-center p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg">
-                    <div className="text-3xl font-bold text-yellow-600 mb-2">2</div>
-                    <div className="text-sm text-yellow-700 dark:text-yellow-300">Minor Issues</div>
-                  </div>
+                <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
+                  <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-xl">2. Visibility of System Status (2 moderate)</h4>
+                  <ul className="space-y-2 text-base ml-4">
+                    <li>• No running indicator</li>
+                    <li>• No save confirmations</li>
+                  </ul>
+                  <p className="mt-3 text-base"><strong>Impact:</strong> Users uncertain if ALPS is working</p>
                 </div>
               </div>
-              
-              <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-4">
-                <h4 className="font-bold text-green-800 dark:text-green-200 mb-2">✅ Outcome</h4>
-                <p className="text-green-700 dark:text-green-300">All 13 identified issues were addressed in subsequent iterations, focusing on consistency, user control, and system feedback.</p>
+            </div>
+            
+            <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-4">
+              <h4 className="font-semibold text-green-700 dark:text-green-400 mb-2">Not Violated:</h4>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-sm">✓ Match Between System and Real World</span>
+                <span className="text-sm">✓ Error Prevention</span>
+                <span className="text-sm">✓ Flexibility and Efficiency of Use</span>
               </div>
             </div>
+
           </div>
+        </div>
 
           {/* Paper Prototypes */}
           <div 
@@ -856,55 +868,60 @@ const Index = () => {
                 </div>
               ))}
             </div>
-            
-            <p className="text-sm text-muted-foreground text-center italic">
-              Click on any image to view in full size
-            </p>
           </div>
 
           {/* User Testing Results */}
-          <div 
-            ref={userTestingSection.ref}
-            className={`mb-16 scroll-animate scroll-fade-up ${userTestingSection.isVisible ? 'visible' : ''}`}
-          >
-            <div className="flex items-center gap-4 mb-6 justify-center">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center" style={{transform: 'translateY(2px)'}}>
-                <span className="text-lg font-bold text-primary">4</span>
+         <div 
+          ref={userTestingSection.ref}
+          className={`container mx-auto mb-16 px-4 max-w-5xl scroll-animate scroll-fade-up ${userTestingSection.isVisible ? 'visible' : ''}`}
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+              <span className="text-lg font-bold text-primary">4</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold ml-2">User Testing Results</h2>
+          </div>
+          
+          <div className="bg-card border border-border rounded-lg p-8">
+            <h3 className="text-xl font-bold mb-6">Tasks Tested:</h3>
+            
+            <div className="grid md:grid-cols-3 gap-4 mb-8">
+              <div className="bg-muted/30 rounded-lg p-4 text-center">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-lg font-bold text-primary">1</span>
+                </div>
+                <p className="font-medium">Posture Correction via Overlay</p>
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold">User Testing Results</h2>
+              
+              <div className="bg-muted/30 rounded-lg p-4 text-center">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-lg font-bold text-primary">2</span>
+                </div>
+                <p className="font-medium">Customising Settings</p>
+              </div>
+              
+              <div className="bg-muted/30 rounded-lg p-4 text-center">
+                <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                  <span className="text-lg font-bold text-primary">6</span>
+                </div>
+                <p className="font-medium">Dismissing Reminders</p>
+              </div>
             </div>
             
-            <div className="bg-card border border-border rounded-lg p-8">
-              <h3 className="text-xl font-bold mb-6">Tasks Tested:</h3>
-              
-              <div className="grid md:grid-cols-3 gap-4 mb-8">
-                <div className="text-center p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600 mb-2">Task 1</div>
-                  <div className="text-sm text-blue-700 dark:text-blue-300">Posture Correction</div>
-                </div>
-                
-                <div className="text-center p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600 mb-2">Task 2</div>
-                  <div className="text-sm text-blue-700 dark:text-blue-300">Settings Customisation</div>
-                </div>
-                
-                <div className="text-center p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600 mb-2">Task 3</div>
-                  <div className="text-sm text-blue-700 dark:text-blue-300">Break Guidance</div>
-                </div>
+            <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-6 mb-6">
+              <div className="flex items-center gap-3 mb-3">
+                <CheckCircle className="w-6 h-6 text-green-600" />
+                <h4 className="font-semibold text-green-700 dark:text-green-400 text-lg">Testing Successful</h4>
               </div>
-              
-              <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-6 mb-6">
-                <h4 className="font-bold text-green-800 dark:text-green-200 mb-2">✅ Success Rate</h4>
-                <p className="text-green-700 dark:text-green-300">100% task completion rate across all 3 core tasks</p>
-              </div>
-              
-              <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
-                <h4 className="font-bold text-orange-800 dark:text-orange-200 mb-2">⚠️ Key Insight</h4>
-                <p className="text-orange-700 dark:text-orange-300">Users needed clearer navigation between settings screens</p>
-              </div>
+              <p className="text-base">All tasks were passed successfully and validated by user testing. Users found the interface intuitive and the task flows logical.</p>
+            </div>
+            
+            <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
+              <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-lg">Note on Overlay Testing</h4>
+              <p className="text-base">Users mentioned concerns about the overlay appearance, but this could not be demonstrated clearly with paper prototypes. This feedback was incorporated into the digital prototype development phase.</p>
             </div>
           </div>
+        </div>
 
           {/* Digital Mockup */}
           <div 
