@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* ALPS Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 18%;
+    
+    /* Primary - Orange (Cat/Brand) */
+    --primary: 22 100% 63%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 22 95% 55%;
+    
+    /* Secondary - Teal (Trust/Calm) */
+    --secondary: 181 54% 55%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent - Gold (Success/Premium) */
+    --accent: 51 100% 50%;
+    --accent-foreground: 220 13% 18%;
+    
+    /* Semantic Colors */
+    --success: 142 71% 45%;
+    --warning: 45 100% 51%;
+    --error: 0 72% 51%;
+    
+    /* Neutrals */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 22 100% 63%;
+    
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --radius: 0.5rem;
+    
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(22 100% 63%) 0%, hsl(35 100% 62%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+    --gradient-teal: linear-gradient(135deg, hsl(181 54% 55%) 0%, hsl(187 71% 60%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-glow: 0 0 24px rgba(255, 140, 66, 0.3);
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 13% 9%;
+    --foreground: 210 40% 98%;
+    
+    --primary: 22 100% 63%;
+    --primary-foreground: 220 13% 9%;
+    --primary-hover: 22 95% 55%;
+    
+    --secondary: 181 54% 45%;
+    --secondary-foreground: 0 0% 100%;
+    
+    --accent: 51 100% 50%;
+    --accent-foreground: 220 13% 9%;
+    
+    --success: 142 71% 45%;
+    --warning: 45 100% 51%;
+    --error: 0 72% 51%;
+    
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    
+    --card: 220 13% 12%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 220 13% 12%;
+    --popover-foreground: 210 40% 98%;
+    
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 22 100% 63%;
+    
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  .gradient-teal {
+    background: var(--gradient-teal);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.5s ease-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scroll animation utilities */
+.scroll-animate {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+}
+
+.scroll-fade-up {
+  transform: translateY(30px);
+}
+
+.scroll-fade-up.visible {
+  transform: translateY(0);
+}
+
+.scroll-fade-in-left {
+  transform: translateX(-30px);
+}
+
+.scroll-fade-in-left.visible {
+  transform: translateX(0);
+}
+
+.scroll-fade-in-right {
+  transform: translateX(30px);
+}
+
+.scroll-fade-in-right.visible {
+  transform: translateX(0);
+}
+
+.scroll-scale-in {
+  transform: scale(0.9);
+}
+
+.scroll-scale-in.visible {
+  transform: scale(1);
+}
+
+/* Stagger delays for children */
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+.stagger-4 { transition-delay: 0.4s; }
+.stagger-5 { transition-delay: 0.5s; }
+.stagger-6 { transition-delay: 0.6s; }
