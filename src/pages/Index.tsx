@@ -162,9 +162,9 @@ const Index = () => {
       num: 1,
       title: "Focus on Customisation & Reporting",
       tasksIncluded: [
-        "1. Posture Correction via Overlay",
-        "2. Customising Settings",
-        "4. Generating Reports"
+        "Task 1: Posture Correction via Overlay",
+        "Task 2: Customising Settings",
+        "Task 4: Generating Reports"
       ],
       tasks: "Task 1, 2, 4"
     },
@@ -172,10 +172,10 @@ const Index = () => {
       num: 2,
       title: "False Alert Correction & Lock Screen Breaks",
       tasksIncluded: [
-        "1. Posture Correction via Overlay",
-        "3. Taking Breaks/Stretching",
-        "5. Correcting False Reminders",
-        "6. Dismissing Reminders"
+        "Task 1: Posture Correction via Overlay",
+        "Task 3: Taking Breaks/Stretching",
+        "Task 5: Correcting False Reminders",
+        "Task 6: Dismissing Reminders"
       ],
       tasks: "Task 1, 3, 5, 6"
     },
@@ -183,10 +183,10 @@ const Index = () => {
       num: 3,
       title: "Video Guidance & Preview (SELECTED)",
       tasksIncluded: [
-        "1. Posture Correction via Overlay",
-        "2. Customising Settings",
-        "3. Taking Breaks/Stretching",
-        "6. Dismissing Reminders"
+        "Task 1: Posture Correction via Overlay",
+        "Task 2: Customising Settings",
+        "Task 3: Taking Breaks/Stretching",
+        "Task 6: Dismissing Reminders"
       ],
       tasks: "Task 1, 2, 3, 6",
       selected: true,
@@ -273,7 +273,7 @@ const Index = () => {
           {/* Timeline Graphic - Centered below */}
           <div 
             ref={timelineSection.ref}
-            className={`flex items-center justify-center gap-3 md:gap-6 text-base md:text-lg flex-wrap scroll-animate scroll-fade-up ${timelineSection.isVisible ? 'visible' : ''}`}
+            className={`flex items-center justify-center gap-3 md:gap-6 text-lg md:text-xl flex-wrap scroll-animate scroll-fade-up ${timelineSection.isVisible ? 'visible' : ''}`}
           >
             <div className="text-center">
               <div className="font-semibold mb-2 text-lg md:text-xl">Research</div>
@@ -331,7 +331,7 @@ const Index = () => {
                     Generic reminder apps interrupt users' workflows at poor times, such as during meetings. This causes users to feel frustrated and ignore or disable the reminders entirely.
                   </p>
                   <div className="text-center">
-                    <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-base rounded-full border border-primary/20">
+                    <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-lg md:text-xl rounded-full border border-primary/20">
                       Disruptive
                     </div>
                   </div>
@@ -345,7 +345,7 @@ const Index = () => {
                     Competitor solutions have high abandonment rates due to lack of personalisation and inconvenience. For example, 80% of users stop using posture wearables within one month.
                   </p>
                   <div className="text-center">
-                    <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-base rounded-full border border-primary/20">
+                    <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-lg md:text-xl rounded-full border border-primary/20">
                       Impersonal
                     </div>
                   </div>
@@ -371,7 +371,7 @@ const Index = () => {
                     Smart AI distinguishes between slouching and intentional leaning and never interrupts during calls or presentations.
                   </p>
                   <div className="text-center">
-                    <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-base rounded-full border border-primary/20">
+                    <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-lg md:text-xl rounded-full border border-primary/20">
                       Non-Disruptive
                     </div>
                   </div>
@@ -385,7 +385,7 @@ const Index = () => {
                     ALPS is customisable to your unique preferences and lifestyle. It runs silently as a software in the background and does not require wearables or complicated setup.
                   </p>
                   <div className="text-center">
-                    <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-base rounded-full border border-primary/20">
+                    <div className="inline-block px-4 py-2 bg-primary/10 text-primary font-semibold text-lg md:text-xl rounded-full border border-primary/20">
                       Personalised
                     </div>
                   </div>
@@ -415,7 +415,7 @@ const Index = () => {
           <p className="text-2xl text-muted-foreground mb-8 text-center">
             Qualitative research through observation and interviews
           </p>
-          <div className="flex flex-wrap gap-6 text-lg justify-center mb-16">
+          <div className="flex flex-wrap gap-6 text-lg md:text-xl justify-center mb-16">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary" />
               <span><strong>Conducted:</strong> November 2025</span>
@@ -458,7 +458,7 @@ const Index = () => {
                 <ul className="space-y-4 text-muted-foreground text-lg">
                   <li><strong className="text-foreground text-xl">Participants:</strong> Students during 4-hour exams</li>
                   <li><strong className="text-foreground text-xl">What We Watched:</strong>
-                    <ul className="ml-6 mt-3 space-y-2 text-base">
+                    <ul className="ml-6 mt-3 space-y-2 text-lg md:text-xl">
                       <li>• Posture changes over time</li>
                       <li>• Physical Discomfort</li>
                     </ul>
@@ -481,7 +481,7 @@ const Index = () => {
                 <ul className="space-y-4 text-muted-foreground text-lg">
                   <li><strong className="text-foreground text-xl">Participants:</strong> 16 office workers & students</li>
                   <li><strong className="text-foreground text-xl">Key Topics:</strong>
-                    <ul className="ml-6 mt-3 space-y-2 text-base">
+                    <ul className="ml-6 mt-3 space-y-2 text-lg md:text-xl">
                       <li>• Participants' current pain points</li>
                       <li>• Existing solutions</li>
                       <li>• User concerns, feedback and suggestions</li>
@@ -516,10 +516,10 @@ const Index = () => {
                       <h3 className="text-xl font-bold mt-2">{theme.title}</h3>
                     </div>
                     
-                    <p className="text-muted-foreground mb-3 text-base">{theme.finding}</p>
+                    <p className="text-muted-foreground mb-3 text-lg md:text-xl">{theme.finding}</p>
                     
                     <div className="bg-primary/5 rounded-lg p-3 mt-auto">
-                      <p className="text-xs font-semibold text-primary">💡 {theme.insight}</p>
+                      <p className="text-lg md:text-xl font-semibold text-primary">💡 {theme.insight}</p>
                     </div>
                   </div>
                 );
@@ -527,17 +527,17 @@ const Index = () => {
             </div>
             
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-8 mt-8">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
+              <div className="grid md:grid-cols-3 gap-8 items-center">
+                <div className="md:col-span-2">
                   <h3 className="text-xl font-bold mb-6">How This Informed ALPS:</h3>
-                  <ol className="space-y-4 list-decimal list-inside">
+                  <ol className="space-y-4 list-decimal list-inside text-lg md:text-xl">
                     <li><strong>Adaptive AI</strong> that learns your body and work patterns</li>
                     <li><strong>Customisable notifications</strong> (full overlay, pop-up, or banner)</li>
                     <li><strong>Do Not Disturb mode</strong> that detects meetings automatically</li>
                     <li><strong>On-device processing</strong> for complete privacy</li>
                   </ol>
                 </div>
-                <div className="flex justify-center">
+                <div className="md:col-span-1 flex justify-center">
                   <img 
                     src="/assets/alps-cat-mascot.png" 
                     alt="ALPS Cat Mascot" 
@@ -619,15 +619,15 @@ const Index = () => {
                         <CardTitle className="text-xl">{design.title}</CardTitle>
                       </div>
                       {design.selected && (
-                        <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-semibold">
+                        <div className="bg-primary/10 text-primary px-3 py-1 rounded-full text-lg md:text-xl font-semibold">
                           SELECTED
                         </div>
                       )}
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    <div className={`grid md:grid-cols-3 gap-6 items-start ${design.num === 2 ? 'md:grid-flow-col-dense' : ''}`}>
-                      <div className={`md:col-span-2 rounded-lg border border-border overflow-hidden cursor-pointer hover:opacity-80 transition-opacity ${design.num === 2 ? 'md:order-2' : ''}`}
+                    <div className={`grid md:grid-cols-5 gap-6 items-start ${design.num === 2 ? 'md:grid-flow-col-dense' : ''}`}>
+                      <div className={`md:col-span-3 rounded-lg border border-border overflow-hidden cursor-pointer hover:opacity-80 transition-opacity ${design.num === 2 ? 'md:order-2' : ''}`}
                            onClick={() => openDesignSketch(design.num)}>
                         <img 
                           src={`/assets/designsketch${design.num}.jpg`} 
@@ -636,9 +636,9 @@ const Index = () => {
                         />
                       </div>
                       
-                      <div className={`${design.num === 2 ? 'md:order-1' : ''}`}>
-                        <h4 className="font-semibold mb-3">Tasks Included:</h4>
-                        <ul className="space-y-2 text-sm">
+                      <div className={`md:col-span-2 ${design.num === 2 ? 'md:order-1' : ''}`}>
+                        <h4 className="font-semibold mb-3 text-lg md:text-xl">Tasks Included:</h4>
+                        <ul className="space-y-2 text-lg md:text-xl">
                           {design.tasksIncluded.map((task, i) => (
                             <li key={i} className="flex items-start gap-2">
                               <div className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
@@ -651,7 +651,7 @@ const Index = () => {
                     
                     {design.selected && design.reason && (
                       <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-4">
-                        <p className="text-sm"><strong>Why this design was selected:</strong> {design.reason}</p>
+                        <p className="text-lg md:text-xl"><strong>Why this design was selected:</strong> {design.reason}</p>
                       </div>
                     )}
                   </CardContent>
@@ -679,11 +679,11 @@ const Index = () => {
                   <CardTitle className="flex items-center gap-3">
                     <span className="text-primary">Scenario #1:</span> Daniel, Financial Analyst
                   </CardTitle>
-                  <CardDescription>ALPS monitors, detects and corrects bad posture during long hours of computer work.</CardDescription>
+                  <CardDescription className="text-lg md:text-xl">ALPS monitors, detects and corrects bad posture during long hours of computer work.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-4">
-                    <h4 className="font-semibold">Storyboard:</h4>
+                    <h4 className="font-semibold text-lg md:text-xl">Storyboard:</h4>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       {storyboard1Images.map((img, index) => (
                         <div key={index} className="relative rounded-lg overflow-hidden border border-border cursor-pointer hover:opacity-80 transition-opacity"
@@ -702,11 +702,11 @@ const Index = () => {
                   <CardTitle className="flex items-center gap-3">
                     <span className="text-primary">Scenario #2:</span> Rachel, Project Manager
                   </CardTitle>
-                  <CardDescription>Customising ALPS to avoid interruptions during frequent video calls.</CardDescription>
+                  <CardDescription className="text-lg md:text-xl">Customising ALPS to avoid interruptions during frequent video calls.</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-4">
-                    <h4 className="font-semibold">Storyboard:</h4>
+                    <h4 className="font-semibold text-lg md:text-xl">Storyboard:</h4>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       {storyboard2Images.map((img, index) => (
                         <div key={index} className="relative rounded-lg overflow-hidden border border-border cursor-pointer hover:opacity-80 transition-opacity"
@@ -733,7 +733,7 @@ const Index = () => {
           {/* Prototype Timeline */}
           <div 
             ref={prototypeTimelineSection.ref}
-            className={`flex items-center justify-between gap-4 pt-8 mb-16 text-base md:text-lg scroll-animate scroll-fade-up ${prototypeTimelineSection.isVisible ? 'visible' : ''}`}
+            className={`flex items-center justify-between gap-4 pt-8 mb-16 text-lg md:text-xl scroll-animate scroll-fade-up ${prototypeTimelineSection.isVisible ? 'visible' : ''}`}
           >
             <div className="text-center flex-1">
               <div className="font-semibold mb-2 text-lg md:text-xl">Initial Paper Prototype</div>
@@ -792,7 +792,7 @@ const Index = () => {
               ))}
             </div>
             
-            <p className="text-sm text-muted-foreground text-center italic">
+            <p className="text-lg md:text-xl text-muted-foreground text-center italic">
               Click on any image to view in full size
             </p>
           </div>
@@ -818,20 +818,20 @@ const Index = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
                   <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-xl">1. Consistency and Standards (2 major)</h4>
-                  <ul className="space-y-2 text-base ml-4">
+                  <ul className="space-y-2 text-lg md:text-xl ml-4">
                     <li>• Inconsistent cat visuals across screens</li>
                     <li>• Mixed close button styles</li>
                   </ul>
-                  <p className="mt-3 text-base"><strong>Impact:</strong> User confusion and reduced trust</p>
+                  <p className="mt-3 text-lg md:text-xl"><strong>Impact:</strong> User confusion and reduced trust</p>
                 </div>
                 
                 <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
                   <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-xl">2. Visibility of System Status (2 moderate)</h4>
-                  <ul className="space-y-2 text-base ml-4">
+                  <ul className="space-y-2 text-lg md:text-xl ml-4">
                     <li>• No running indicator</li>
                     <li>• No save confirmations</li>
                   </ul>
-                  <p className="mt-3 text-base"><strong>Impact:</strong> Users uncertain if ALPS is working</p>
+                  <p className="mt-3 text-lg md:text-xl"><strong>Impact:</strong> Users uncertain if ALPS is working</p>
                 </div>
               </div>
             </div>
@@ -839,9 +839,9 @@ const Index = () => {
             <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-4">
               <h4 className="font-semibold text-green-700 dark:text-green-400 mb-2">Not Violated:</h4>
               <div className="flex flex-wrap gap-2">
-                <span className="text-sm">✓ Match Between System and Real World</span>
-                <span className="text-sm">✓ Error Prevention</span>
-                <span className="text-sm">✓ Flexibility and Efficiency of Use</span>
+                <span className="text-lg md:text-xl">✓ Match Between System and Real World</span>
+                <span className="text-lg md:text-xl">✓ Error Prevention</span>
+                <span className="text-lg md:text-xl">✓ Flexibility and Efficiency of Use</span>
               </div>
             </div>
 
@@ -902,7 +902,7 @@ const Index = () => {
               
               <div className="bg-muted/30 rounded-lg p-4 text-center">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-lg font-bold text-primary">6</span>
+                  <span className="text-lg font-bold text-primary">3</span>
                 </div>
                 <p className="font-medium">Dismissing Reminders</p>
               </div>
@@ -913,12 +913,12 @@ const Index = () => {
                 <CheckCircle className="w-6 h-6 text-green-600" />
                 <h4 className="font-semibold text-green-700 dark:text-green-400 text-lg">Testing Successful</h4>
               </div>
-              <p className="text-base">All tasks were passed successfully and validated by user testing. Users found the interface intuitive and the task flows logical.</p>
+              <p className="text-lg md:text-xl">All tasks were passed successfully and validated by user testing. Users found the interface intuitive and the task flows logical.</p>
             </div>
             
             <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
               <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-lg">Note on Overlay Testing</h4>
-              <p className="text-base">Users mentioned concerns about the overlay appearance, but this could not be demonstrated clearly with paper prototypes. This feedback was incorporated into the digital prototype development phase.</p>
+              <p className="text-lg md:text-xl">Users mentioned concerns about the overlay appearance, but this could not be demonstrated clearly with paper prototypes. This feedback was incorporated into the digital prototype development phase.</p>
             </div>
           </div>
         </div>
@@ -940,19 +940,19 @@ const Index = () => {
               <div className="grid md:grid-cols-2 gap-x-8 gap-y-3">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>Consistent cat mascot across all screens</span>
+                  <span className="text-lg md:text-xl">Consistent cat mascot across all screens</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>Standardized timer-based close buttons</span>
+                  <span className="text-lg md:text-xl">Standardized timer-based close buttons</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>Added background running indicator</span>
+                  <span className="text-lg md:text-xl">Added background running indicator</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-primary" />
-                  <span>Created smooth fade-in animations</span>
+                  <span className="text-lg md:text-xl">Created smooth fade-in animations</span>
                 </div>
               </div>
             </div>
@@ -967,7 +967,7 @@ const Index = () => {
                   </div>
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground mt-6 text-center italic">
+              <p className="text-lg md:text-xl text-muted-foreground mt-6 text-center italic">
                 Click on any image to view in full size
               </p>
             </div>
@@ -1037,7 +1037,7 @@ const Index = () => {
             </button>
 
             {/* Image counter */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 px-4 py-2 rounded-full text-white text-sm">
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 px-4 py-2 rounded-full text-white text-lg md:text-xl">
               {currentImageIndex + 1} / {getCurrentImages().length}
             </div>
           </div>
