@@ -64,9 +64,14 @@ const Demo = () => {
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
               Experience ALPS in action! Watch our demo video to see how our AI-powered posture coach works in real scenarios.
             </p>
-            {/* Replace the below div with your actual video embed or player */}
-            <div className="w-full h-96 bg-muted rounded-lg flex items-center justify-center border-2 border-primary/20 shadow-lg">
-              <span className="text-2xl text-muted-foreground">[Video Demo Placeholder]</span>
+            <div className="w-full aspect-video rounded-lg overflow-hidden border-2 border-primary/20 shadow-lg">
+              <iframe 
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/4Jk5yBU1Xx8"
+                title="ALPS Demo Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
