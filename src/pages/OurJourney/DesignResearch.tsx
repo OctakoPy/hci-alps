@@ -62,7 +62,7 @@ const DesignResearch = () => {
           <p className="text-2xl text-muted-foreground mb-8 animate-slide-up">
             Qualitative research through observation and interviews
           </p>
-          <div className="flex flex-wrap gap-6 text-lg animate-slide-up">
+          <div className="flex flex-wrap gap-6 text-xl animate-slide-up">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary" />
               <span><strong>Conducted:</strong> November 2025</span>
@@ -100,16 +100,14 @@ const DesignResearch = () => {
                 </div>
                 <h3 className="text-2xl font-bold">Observation</h3>
               </div>
-              
               {/* Observation Image */}
               <div className="mb-4 rounded-lg overflow-hidden border border-border">
                 <img src="/assets/group-project.jpg" alt="Observation research session" className="w-full h-48 object-cover" />
               </div>
-              
-              <ul className="space-y-4 text-muted-foreground text-lg">
+              <ul className="space-y-4 text-muted-foreground text-xl">
                 <li><strong className="text-foreground text-xl">Participants:</strong> Students during 4-hour exams</li>
                 <li><strong className="text-foreground text-xl">What We Watched:</strong>
-                  <ul className="ml-6 mt-3 space-y-2 text-base">
+                  <ul className="ml-6 mt-3 space-y-2 text-xl">
                     <li>• Posture changes over time</li>
                     <li>• Physical Discomfort</li>
                   </ul>
@@ -124,16 +122,14 @@ const DesignResearch = () => {
                 </div>
                 <h3 className="text-2xl font-bold">Interviews</h3>
               </div>
-              
               {/* Interviews Image */}
               <div className="mb-4 rounded-lg overflow-hidden border border-border">
                 <img src={interview} alt="Interview research session" className="w-full h-48 object-cover" />
               </div>
-              
-              <ul className="space-y-4 text-muted-foreground text-lg">
+              <ul className="space-y-4 text-muted-foreground text-xl">
                 <li><strong className="text-foreground text-xl">Participants:</strong> 16 office workers & students</li>
                 <li><strong className="text-foreground text-xl">Key Topics:</strong>
-                  <ul className="ml-6 mt-3 space-y-2 text-base">
+                  <ul className="ml-6 mt-3 space-y-2 text-xl">
                     <li>• Participants' current pain points</li>
                     <li>• Existing solutions</li>
                     <li>• User concerns, feedback and suggestions</li>
@@ -153,7 +149,7 @@ const DesignResearch = () => {
         >
           <div className="flex items-center gap-3 mb-8">
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-lg font-bold text-primary">2</span>
+              <span className="text-xl font-bold text-primary">2</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold ml-2">4 Key Findings</h2>
           </div>
@@ -169,11 +165,9 @@ const DesignResearch = () => {
                     </div>
                     <h3 className="text-xl font-bold mt-2">{theme.title}</h3>
                   </div>
-                  
-                  <p className="text-muted-foreground mb-3 text-base">{theme.finding}</p>
-                  
+                  <p className="text-muted-foreground mb-3 text-xl">{theme.finding}</p>
                   <div className="bg-primary/5 rounded-lg p-3 mt-auto">
-                    <p className="text-xs font-semibold text-primary">💡 {theme.insight}</p>
+                    <p className="text-xl font-semibold text-primary">💡 {theme.insight}</p>
                   </div>
                 </div>
               );
@@ -181,17 +175,17 @@ const DesignResearch = () => {
           </div>
           
           <div className="bg-primary/5 border border-primary/20 rounded-lg p-8 mt-8">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
+            <div className="grid md:grid-cols-6 gap-8 items-center">
+              <div className="md:col-span-4">
                 <h3 className="text-xl font-bold mb-6">How This Informed ALPS:</h3>
-                <ol className="space-y-4 list-decimal list-inside">
+                <ol className="space-y-4 list-decimal list-inside text-xl">
                   <li><strong>Adaptive AI</strong> that learns your body and work patterns</li>
                   <li><strong>Customisable notifications</strong> (full overlay, pop-up, or banner)</li>
                   <li><strong>Do Not Disturb mode</strong> that detects meetings automatically</li>
                   <li><strong>On-device processing</strong> for complete privacy</li>
                 </ol>
               </div>
-              <div className="flex justify-center">
+              <div className="flex justify-center md:col-span-2">
                 <img 
                   src="/assets/alps-cat-mascot.png" 
                   alt="ALPS Cat Mascot" 
@@ -204,7 +198,7 @@ const DesignResearch = () => {
       </section>
 
       {/* Navigation */}
-      <section className="container mx-auto px-4 max-w-5xl">
+      <section className="container mx-auto px-4 max-w-5xl text-xl">
         <PageNavigation
           previous={{ title: "Overview", path: "/our-journey" }}
           next={{ title: "Design Ideation", path: "/our-journey/design-ideation" }}

@@ -133,7 +133,7 @@ const DesignIdeation = () => {
       ],
       tasks: "Task 1, 2, 3, 6",
       selected: true,
-      reason: "Design #3 gives the best balance of the tasks required by users. Tt provides customisation, includes stretch guidance and uses videos to make posture correction more intuitive."
+      reason: "Design #3 gives the best balance of the tasks required by users. It provides customisation, includes stretch guidance and uses videos to make posture correction more intuitive."
     }
   ];
 
@@ -183,7 +183,7 @@ const DesignIdeation = () => {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{task.description}</p>
+                  <p className="text-muted-foreground text-xl">{task.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -216,7 +216,7 @@ const DesignIdeation = () => {
                       <CardTitle className="text-2xl">{design.title}</CardTitle>
                     </div>
                     {design.selected && (
-                      <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-base font-semibold">
+                      <span className="bg-primary text-primary-foreground px-4 py-2 rounded-full text-xl font-semibold">
                         ✓ SELECTED
                       </span>
                     )}
@@ -225,9 +225,9 @@ const DesignIdeation = () => {
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {/* Design sketch image and content layout */}
-                  <div className={`grid md:grid-cols-3 gap-6 items-start ${design.num === 2 ? 'md:grid-flow-col-dense' : ''}`}>
+                  <div className={`grid md:grid-cols-5 gap-6 items-start ${design.num === 2 ? 'md:grid-flow-col-dense' : ''}`}>
                     {/* Image */}
-                    <div className={`md:col-span-2 rounded-lg border border-border overflow-hidden cursor-pointer hover:opacity-80 transition-opacity ${design.num === 2 ? 'md:order-2' : ''}`}
+                    <div className={`md:col-span-3 rounded-lg border border-border overflow-hidden cursor-pointer hover:opacity-80 transition-opacity ${design.num === 2 ? 'md:order-2' : ''}`}
                          onClick={() => openDesignSketch(design.num)}>
                       <img 
                         src={`/assets/designsketch${design.num}.jpg`} 
@@ -237,11 +237,11 @@ const DesignIdeation = () => {
                     </div>
                     
                     {/* Content */}
-                    <div className={`md:col-span-1 ${design.num === 2 ? 'md:order-1' : ''}`}>
-                      <h4 className="font-semibold mb-4 text-lg">Tasks Included:</h4>
+                    <div className={`md:col-span-2 ${design.num === 2 ? 'md:order-1' : ''}`}>
+                      <h4 className="font-semibold mb-4 text-xl">Tasks Included:</h4>
                       <div className="space-y-3">
                         {design.tasksIncluded.map((task, i) => (
-                          <div key={i} className="flex items-start gap-3 text-base">
+                          <div key={i} className="flex items-start gap-3 text-xl">
                             <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                             <span>{task}</span>
                           </div>
@@ -252,8 +252,8 @@ const DesignIdeation = () => {
                   
                   {design.selected && design.reason && (
                     <div className="bg-primary/5 border border-primary/20 rounded-lg p-5">
-                      <h4 className="font-semibold text-primary mb-3 text-lg">Why We Selected This Design:</h4>
-                      <p className="text-base">{design.reason}</p>
+                      <h4 className="font-semibold text-primary mb-3 text-xl">Why We Selected This Design:</h4>
+                      <p className="text-xl">{design.reason}</p>
                     </div>
                   )}
                 </CardContent>
@@ -280,16 +280,16 @@ const DesignIdeation = () => {
             {/* Scenario 1 */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
+                <CardTitle className="flex items-center gap-3 text-xl">
                   <span className="text-primary">Scenario #1:</span> Daniel, Financial Analyst
                 </CardTitle>
-                <CardDescription>ALPS monitors, detects and corrects bad posture during long hours of computer work.</CardDescription>
+                <CardDescription className="text-xl">ALPS monitors, detects and corrects bad posture during long hours of computer work.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
 
                 
                 <div className="space-y-4">
-                  <h4 className="font-semibold">Storyboard:</h4>
+                  <h4 className="font-semibold text-xl">Storyboard:</h4>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {storyboard1Images.map((img, index) => (
                       <div 
@@ -308,16 +308,16 @@ const DesignIdeation = () => {
             {/* Scenario 2 */}
             <Card>
               <CardHeader>
-                <CardTitle className="flex items-center gap-3">
+                <CardTitle className="flex items-center gap-3 text-xl">
                   <span className="text-primary">Scenario #2:</span> Rachel, Project Manager
                 </CardTitle>
-                <CardDescription>Customising ALPS to avoid interruptions during frequent video calls.</CardDescription>
+                <CardDescription className="text-xl">Customising ALPS to avoid interruptions during frequent video calls.</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
 
                 
                 <div className="space-y-4">
-                  <h4 className="font-semibold">Storyboard:</h4>
+                  <h4 className="font-semibold text-xl">Storyboard:</h4>
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {storyboard2Images.map((img, index) => (
                       <div 
@@ -337,7 +337,7 @@ const DesignIdeation = () => {
       </section>
 
       {/* Navigation */}
-      <section className="container mx-auto px-4 max-w-5xl">
+      <section className="container mx-auto px-4 max-w-5xl text-xl">
         <PageNavigation
           previous={{ title: "Design Research", path: "/our-journey/design-research" }}
           next={{ title: "Prototype & Testing", path: "/our-journey/prototype-testing" }}

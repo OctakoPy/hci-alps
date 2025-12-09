@@ -37,7 +37,6 @@ const JourneyNav = () => {
   }, [lastScrollY]);
   
   const pages = [
-    { name: "Overview", path: "/our-journey" },
     { name: "Research", path: "/our-journey/design-research" },
     { name: "Ideation", path: "/our-journey/design-ideation" },
     { name: "Testing", path: "/our-journey/prototype-testing" }

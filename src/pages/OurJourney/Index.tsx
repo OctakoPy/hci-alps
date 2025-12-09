@@ -18,9 +18,7 @@ const OurJourneyIndex = () => {
   const timelineSection = useScrollAnimation();
   const abstractSection = useScrollAnimation();
   const problemSection = useScrollAnimation();
-  const featuresSection = useScrollAnimation();
   const solutionSection = useScrollAnimation();
-  const goalsSection = useScrollAnimation();
   const journeyCardsSection = useScrollAnimation();
   
   const journeyCards = [
@@ -219,15 +217,6 @@ const OurJourneyIndex = () => {
               </div>
             </div>
 
-            {/* Live Demo Section */}
-            <div className="mt-16">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">ALPS <span className="text-primary">Video Demo</span></h2>
-                <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-                  PLACEHOLDER FOR THE VIDEO
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

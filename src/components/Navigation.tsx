@@ -54,8 +54,17 @@ const Navigation = () => {
             <a href="/" className="text-sm font-medium hover:text-primary transition-colors">
               Home
             </a>
-            <a href="/our-journey" className="text-sm font-medium hover:text-primary transition-colors">
-              Our Journey
+            <a href="/demo" className="text-sm font-medium hover:text-primary transition-colors">
+              Demo
+            </a>
+            <a href="/our-journey/design-research" className="text-sm font-medium hover:text-primary transition-colors">
+              Design Research
+            </a>
+            <a href="/our-journey/design-ideation" className="text-sm font-medium hover:text-primary transition-colors">
+              Design Ideation
+            </a>
+            <a href="/our-journey/prototype-testing" className="text-sm font-medium hover:text-primary transition-colors">
+              Prototype Testing
             </a>
           </div>
           
@@ -84,18 +93,39 @@ const Navigation = () => {
               Home
             </a>
             <a 
+              href="/demo" 
+              className="block text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Demo
+            </a>
+            <a 
+              href="/our-journey/design-research" 
+              className="block text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Design Research
+            </a>
+            <a 
+              href="/our-journey/design-ideation" 
+              className="block text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Design Ideation
+            </a>
+            <a 
+              href="/our-journey/prototype-testing" 
+              className="block text-sm font-medium hover:text-primary transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Prototype Testing
+            </a>
+            <a 
               href="/how-it-works" 
               className="block text-sm font-medium hover:text-primary transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               How It Works
-            </a>
-            <a 
-              href="/our-journey" 
-              className="block text-sm font-medium hover:text-primary transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Our Journey
             </a>
             <a 
               href="/presentation" 

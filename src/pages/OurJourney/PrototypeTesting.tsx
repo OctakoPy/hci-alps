@@ -123,13 +123,13 @@ const PrototypeTesting = () => {
           {/* Timeline Graphic */}
           <div 
             ref={timelineSection.ref}
-            className={`flex items-center justify-between gap-4 pt-8 text-base md:text-lg scroll-animate scroll-fade-up ${timelineSection.isVisible ? 'visible' : ''}`}
+            className={`flex items-center justify-between gap-4 pt-8 text-xl scroll-animate scroll-fade-up ${timelineSection.isVisible ? 'visible' : ''}`}
           >
               <div className="text-center flex-1">
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto mb-2">
                   <FileEdit className="w-8 h-8 md:w-10 md:h-10 text-primary" />
                 </div>
-                <div className="font-semibold text-sm md:text-base leading-tight">
+                <div className="font-semibold text-xl leading-tight">
                   <div>Initial</div>
                   <div>Prototype</div>
                 </div>
@@ -139,7 +139,7 @@ const PrototypeTesting = () => {
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto mb-2">
                   <Search className="w-8 h-8 md:w-10 md:h-10 text-primary" />
                 </div>
-                <div className="font-semibold text-sm md:text-base leading-tight">
+                <div className="font-semibold text-xl leading-tight">
                   <div>Heuristic</div>
                   <div>Evaluation</div>
                 </div>
@@ -149,7 +149,7 @@ const PrototypeTesting = () => {
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto mb-2">
                   <FileEdit className="w-8 h-8 md:w-10 md:h-10 text-primary" />
                 </div>
-                <div className="font-semibold text-sm md:text-base leading-tight">
+                <div className="font-semibold text-xl leading-tight">
                   <div>Final</div>
                   <div>Prototype</div>
                 </div>
@@ -159,7 +159,7 @@ const PrototypeTesting = () => {
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto mb-2">
                   <Users className="w-8 h-8 md:w-10 md:h-10 text-primary" />
                 </div>
-                <div className="font-semibold text-sm md:text-base leading-tight">
+                <div className="font-semibold text-xl leading-tight">
                   <div>User</div>
                   <div>Testing</div>
                 </div>
@@ -169,7 +169,7 @@ const PrototypeTesting = () => {
                 <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary/10 border-2 border-primary flex items-center justify-center mx-auto mb-2">
                   <CheckCircle className="w-8 h-8 md:w-10 md:h-10 text-primary" />
                 </div>
-                <div className="font-semibold text-sm md:text-base leading-tight">
+                <div className="font-semibold text-xl leading-tight">
                   <div>Digital</div>
                   <div>Mockup</div>
                 </div>
@@ -186,7 +186,7 @@ const PrototypeTesting = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-lg font-bold text-primary">1</span>
+              <span className="text-xl font-bold text-primary">1</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold ml-2">Initial Paper Prototypes</h2>
           </div>
@@ -203,7 +203,7 @@ const PrototypeTesting = () => {
             ))}
           </div>
           
-          <p className="text-sm text-muted-foreground mt-6 text-center italic">
+          <p className="text-xl text-muted-foreground mt-6 text-center italic">
             Click on any image to view in full size
           </p>
         </div>
@@ -217,7 +217,7 @@ const PrototypeTesting = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-lg font-bold text-primary">2</span>
+              <span className="text-xl font-bold text-primary">2</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold ml-2">Heuristic Evaluation Summary</h2>
           </div>
@@ -229,30 +229,30 @@ const PrototypeTesting = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
                   <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-xl">1. Consistency and Standards (2 major)</h4>
-                  <ul className="space-y-2 text-base ml-4">
+                  <ul className="space-y-2 text-xl ml-4">
                     <li>• Inconsistent cat visuals across screens</li>
                     <li>• Mixed close button styles</li>
                   </ul>
-                  <p className="mt-3 text-base"><strong>Impact:</strong> User confusion and reduced trust</p>
+                  <p className="mt-3 text-xl"><strong>Impact:</strong> User confusion and reduced trust</p>
                 </div>
                 
                 <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
                   <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-xl">2. Visibility of System Status (2 moderate)</h4>
-                  <ul className="space-y-2 text-base ml-4">
+                  <ul className="space-y-2 text-xl ml-4">
                     <li>• No running indicator</li>
                     <li>• No save confirmations</li>
                   </ul>
-                  <p className="mt-3 text-base"><strong>Impact:</strong> Users uncertain if ALPS is working</p>
+                  <p className="mt-3 text-xl"><strong>Impact:</strong> Users uncertain if ALPS is working</p>
                 </div>
               </div>
             </div>
             
             <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-4">
-              <h4 className="font-semibold text-green-700 dark:text-green-400 mb-2">Not Violated:</h4>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-sm">✓ Match Between System and Real World</span>
-                <span className="text-sm">✓ Error Prevention</span>
-                <span className="text-sm">✓ Flexibility and Efficiency of Use</span>
+              <h4 className="font-semibold text-green-700 dark:text-green-400 mb-2 text-xl">Not Violated:</h4>
+              <div className="flex flex-wrap gap-2 text-xl">
+                <span>✓ Match Between System and Real World</span>
+                <span>✓ Error Prevention</span>
+                <span>✓ Flexibility and Efficiency of Use</span>
               </div>
             </div>
 
@@ -268,7 +268,7 @@ const PrototypeTesting = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-lg font-bold text-primary">3</span>
+              <span className="text-xl font-bold text-primary">3</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold ml-2">Final Paper Prototype</h2>
           </div>
@@ -285,7 +285,7 @@ const PrototypeTesting = () => {
             ))}
           </div>
           
-          <p className="text-sm text-muted-foreground mt-6 text-center italic">
+          <p className="text-xl text-muted-foreground mt-6 text-center italic">
             Click on any image to view in full size
           </p>
         </div>
@@ -299,7 +299,7 @@ const PrototypeTesting = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-lg font-bold text-primary">4</span>
+              <span className="text-xl font-bold text-primary">4</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold ml-2">User Testing Results</h2>
           </div>
@@ -310,37 +310,37 @@ const PrototypeTesting = () => {
             <div className="grid md:grid-cols-3 gap-4 mb-8">
               <div className="bg-muted/30 rounded-lg p-4 text-center">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-lg font-bold text-primary">1</span>
+                  <span className="text-xl font-bold text-primary">1</span>
                 </div>
-                <p className="font-medium">Posture Correction via Overlay</p>
+                <p className="font-medium text-xl">Posture Correction via Overlay</p>
               </div>
               
               <div className="bg-muted/30 rounded-lg p-4 text-center">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-lg font-bold text-primary">2</span>
+                  <span className="text-xl font-bold text-primary">2</span>
                 </div>
-                <p className="font-medium">Customising Settings</p>
+                <p className="font-medium text-xl">Customising Settings</p>
               </div>
               
               <div className="bg-muted/30 rounded-lg p-4 text-center">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <span className="text-lg font-bold text-primary">6</span>
+                  <span className="text-xl font-bold text-primary">3</span>
                 </div>
-                <p className="font-medium">Dismissing Reminders</p>
+                <p className="font-medium text-xl">Dismissing Reminders</p>
               </div>
             </div>
             
             <div className="bg-green-50 dark:bg-green-950/20 rounded-lg p-6 mb-6">
               <div className="flex items-center gap-3 mb-3">
                 <CheckCircle className="w-6 h-6 text-green-600" />
-                <h4 className="font-semibold text-green-700 dark:text-green-400 text-lg">Testing Successful</h4>
+                <h4 className="font-semibold text-green-700 dark:text-green-400 text-xl">Testing Successful</h4>
               </div>
-              <p className="text-base">All tasks were passed successfully and validated by user testing. Users found the interface intuitive and the task flows logical.</p>
+              <p className="text-xl">All tasks were passed successfully and validated by user testing. Users found the interface intuitive and the task flows logical.</p>
             </div>
             
             <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
-              <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-lg">Note on Overlay Testing</h4>
-              <p className="text-base">Users mentioned concerns about the overlay appearance, but this could not be demonstrated clearly with paper prototypes. This feedback was incorporated into the digital prototype development phase.</p>
+              <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-xl">Note on Overlay Testing</h4>
+              <p className="text-xl">Users mentioned concerns about the overlay appearance, but this could not be demonstrated clearly with paper prototypes. This feedback was incorporated into the digital prototype development phase.</p>
             </div>
           </div>
         </div>
@@ -355,14 +355,14 @@ const PrototypeTesting = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-lg font-bold text-primary">5</span>
+              <span className="text-xl font-bold text-primary">5</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold ml-2">Digital Mockup</h2>
           </div>
           
           <div className="bg-card border border-border rounded-lg p-8 mb-6">
             <h3 className="text-xl font-bold mb-4">Key Changes Applied:</h3>
-            <div className="grid md:grid-cols-2 gap-x-8 gap-y-3">
+            <div className="grid md:grid-cols-2 gap-x-8 gap-y-3 text-xl">
               {improvements.map((improvement, i) => (
                 <p key={i} className="flex items-start gap-2">
                   <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
@@ -385,7 +385,7 @@ const PrototypeTesting = () => {
                 </div>
               ))}
             </div>
-            <p className="text-sm text-muted-foreground mt-6 text-center italic">
+            <p className="text-xl text-muted-foreground mt-6 text-center italic">
               Click on any image to view in full size
             </p>
           </div>
@@ -401,20 +401,19 @@ const PrototypeTesting = () => {
         >
           <TrendingUp className="w-16 h-16 text-primary mx-auto mb-6" />
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Want to See the Final Product Demo?
+            Download ALPS Now!
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            From research insights to validated prototypes, the team has now developed the high-fidelity prototype!
-          </p>
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+Don't hesitate to improve your sitting posture and overall wellbeing at your workplace!          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/how-it-works">
               <Button size="lg" className="w-full sm:w-auto">
-                See Demo
+                Contact Us
               </Button>
             </Link>
             <Link to="/roadmap">
               <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                View Roadmap For All Feature Updates
+                Download ALPS for Windows
               </Button>
             </Link>
           </div>
@@ -422,7 +421,7 @@ const PrototypeTesting = () => {
       </section>
 
       {/* Navigation */}
-      <section className="container mx-auto px-4 max-w-5xl">
+      <section className="container mx-auto px-4 max-w-5xl text-xl">
         <PageNavigation
           previous={{ title: "Design Ideation", path: "/our-journey/design-ideation" }}
         />
@@ -478,7 +477,7 @@ const PrototypeTesting = () => {
             </button>
 
             {/* Image counter */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 px-4 py-2 rounded-full text-white text-sm">
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 px-4 py-2 rounded-full text-white text-xl">
               {currentImageIndex + 1} / {
                 activeImageCollection === 'initial'
                   ? initialPrototypeImages.length

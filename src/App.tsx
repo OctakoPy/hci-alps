@@ -11,6 +11,7 @@ import Roadmap from "./pages/Roadmap";
 import HowItWorks from "./pages/HowItWorks";
 import NotFound from "./pages/NotFound";
 import OurJourneyIndex from "./pages/OurJourney/Index";
+import Demo from "./pages/Demo";
 import DesignResearch from "./pages/OurJourney/DesignResearch";
 import DesignIdeation from "./pages/OurJourney/DesignIdeation";
 import PrototypeTesting from "./pages/OurJourney/PrototypeTesting";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/roadmap" element={<Roadmap />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/our-journey" element={<OurJourneyIndex />} />
+          <Route path="/demo" element={<Demo />} />
           <Route path="/our-journey/design-research" element={<DesignResearch />} />
           <Route path="/our-journey/design-ideation" element={<DesignIdeation />} />
           <Route path="/our-journey/prototype-testing" element={<PrototypeTesting />} />
