@@ -397,25 +397,37 @@ const PrototypeTesting = () => {
       <section className="py-16 bg-gradient-to-br from-primary/5 to-primary/10 border-t border-border">
         <div 
           ref={ctaSection.ref}
-          className={`container mx-auto px-4 max-w-5xl text-center scroll-animate scroll-scale-in ${ctaSection.isVisible ? 'visible' : ''}`}
+          className={`container mx-auto px-4 max-w-5xl scroll-animate scroll-scale-in ${ctaSection.isVisible ? 'visible' : ''}`}
         >
-          <TrendingUp className="w-16 h-16 text-primary mx-auto mb-6" />
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Download ALPS Now!
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-Don't hesitate to improve your sitting posture and overall wellbeing at your workplace!          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/how-it-works">
-              <Button size="lg" className="w-full sm:w-auto">
-                Contact Us
-              </Button>
-            </Link>
-            <Link to="/roadmap">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                Download ALPS for Windows
-              </Button>
-            </Link>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="text-center md:text-left">
+              <TrendingUp className="w-16 h-16 text-primary mx-auto md:mx-0 mb-6" />
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Download ALPS Now!
+              </h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Don't hesitate to improve your sitting posture and overall wellbeing at your workplace!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <Link to="/how-it-works">
+                  <Button size="lg" className="w-full sm:w-auto">
+                    Contact Us
+                  </Button>
+                </Link>
+                <Link to="/roadmap">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                    Download ALPS for Windows
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <img 
+                src="/assets/alps-howitworks.png" 
+                alt="ALPS How It Works" 
+                className="w-full max-w-md h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
