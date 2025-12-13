@@ -5,7 +5,7 @@ import PageNavigation from "@/components/OurJourney/PageNavigation";
 import { Button } from "@/components/ui/button";
 import { Users, Search, CheckCircle, TrendingUp, ChevronLeft, ChevronRight, X, ArrowRight, FileEdit } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Card, CardContent } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
@@ -20,6 +20,7 @@ const PrototypeTesting = () => {
   const issuesSection = useScrollAnimation();
   const heuristicsSection = useScrollAnimation();
   const userTestingSection = useScrollAnimation();
+  const susScoreSection = useScrollAnimation();
   const validationSection = useScrollAnimation();
   const figmaSection = useScrollAnimation();
   const ctaSection = useScrollAnimation();
@@ -27,6 +28,9 @@ const PrototypeTesting = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeImageCollection, setActiveImageCollection] = useState<'initial' | 'paper' | 'mockup'>('initial');
+  const [susScore, setSusScore] = useState(0);
+  const [showExcellent, setShowExcellent] = useState(false);
+  const hasAnimated = useRef(false);
 
   const initialPrototypeImages = [
     { src: "/assets/initialprototype1.jpg", alt: "Initial Prototype 1" },
@@ -88,6 +92,32 @@ const PrototypeTesting = () => {
     if (e.key === "ArrowLeft") goToPrevious();
     if (e.key === "Escape") setLightboxOpen(false);
   };
+
+  // SUS Score Animation Effect
+  useEffect(() => {
+    if (susScoreSection.isVisible && !hasAnimated.current) {
+      hasAnimated.current = true;
+      const duration = 500;
+      const targetScore = 86.8;
+      const steps = 60;
+      const increment = targetScore / steps;
+      let currentStep = 0;
+
+      const timer = setInterval(() => {
+        currentStep++;
+        setSusScore(Math.min(currentStep * increment, targetScore));
+        
+        if (currentStep >= steps) {
+          clearInterval(timer);
+          setSusScore(targetScore);
+          // Show EXCELLENT badge immediately when countup completes
+          setShowExcellent(true);
+        }
+      }, duration / steps);
+
+      return () => clearInterval(timer);
+    }
+  }, [susScoreSection.isVisible]);
 
   const topIssues = [
     { num: 1, issue: "No background running indicator", heuristic: "Visibility of System Status", severity: "3 - Moderate", solution: "Added menu bar icon showing ALPS is active" },
@@ -338,9 +368,38 @@ const PrototypeTesting = () => {
               <p className="text-xl">All tasks were passed successfully and validated by user testing. Users found the interface intuitive and the task flows logical.</p>
             </div>
             
-            <div className="bg-orange-50 dark:bg-orange-950/20 rounded-lg p-6">
-              <h4 className="font-semibold text-orange-700 dark:text-orange-400 mb-3 text-xl">Note on Overlay Testing</h4>
-              <p className="text-xl">Users mentioned concerns about the overlay appearance, but this could not be demonstrated clearly with paper prototypes. This feedback was incorporated into the digital prototype development phase.</p>
+            {/* SUS Score - Special Highlight */}
+            <div 
+              ref={susScoreSection.ref}
+              className={`relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-400 to-amber-400 dark:from-orange-600 dark:via-orange-500 dark:to-amber-500 rounded-xl pt-8 pb-4 shadow-2xl border-4 border-orange-400/30 dark:border-orange-500/30 scroll-animate scroll-fade-up ${susScoreSection.isVisible ? 'visible' : ''}`}
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 dark:bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/10 dark:bg-white/5 rounded-full translate-y-24 -translate-x-24"></div>
+              
+              <div className="relative z-10 text-center">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4 backdrop-blur-sm">
+                  <TrendingUp className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                  System Usability Scale (SUS) Score
+                </h3>
+                
+                <div className="flex items-center justify-center gap-4 mb-6">
+                  <div className="text-7xl md:text-8xl font-extrabold text-white tracking-tight">
+                    {susScore.toFixed(1)}
+                  </div>
+                  <div className="text-left">
+                    <div className="text-3xl md:text-4xl font-bold text-white/95">/ 100</div>
+                  </div>
+                </div>
+                
+                <div className={`inline-block bg-white px-8 py-3 rounded-full mb-4 shadow-lg transition-all duration-300 ${showExcellent ? 'opacity-100 scale-100' : 'opacity-0 scale-50'}`}>
+                  <span className="text-2xl md:text-3xl font-bold text-orange-700 dark:text-orange-600 tracking-wide">
+                    EXCELLENT
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
