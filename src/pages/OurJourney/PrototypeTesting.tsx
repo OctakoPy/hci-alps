@@ -22,15 +22,21 @@ const PrototypeTesting = () => {
   const userTestingSection = useScrollAnimation();
   const susScoreSection = useScrollAnimation();
   const validationSection = useScrollAnimation();
+  const posterSection = useScrollAnimation();
   const figmaSection = useScrollAnimation();
   const ctaSection = useScrollAnimation();
   
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [activeImageCollection, setActiveImageCollection] = useState<'initial' | 'paper' | 'mockup'>('initial');
+  const [activeImageCollection, setActiveImageCollection] = useState<'initial' | 'paper' | 'mockup' | 'poster'>('initial');
   const [susScore, setSusScore] = useState(0);
   const [showExcellent, setShowExcellent] = useState(false);
   const hasAnimated = useRef(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
+  const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [hasDragged, setHasDragged] = useState(false);
 
   const initialPrototypeImages = [
     { src: "/assets/initialprototype1.jpg", alt: "Initial Prototype 1" },
@@ -57,10 +63,16 @@ const PrototypeTesting = () => {
     { src: "/assets/mockup4.png", alt: "Digital Mockup 4" }
   ];
 
-  const openLightbox = (index: number, collection: 'initial' | 'paper' | 'mockup') => {
+  const posterImages = [
+    { src: "/assets/poster.png", alt: "ALPS Poster" }
+  ];
+
+  const openLightbox = (index: number, collection: 'initial' | 'paper' | 'mockup' | 'poster') => {
     setCurrentImageIndex(index);
     setActiveImageCollection(collection);
     setLightboxOpen(true);
+    setZoomLevel(1);
+    setZoomPosition({ x: 0, y: 0 });
   };
 
   const goToNext = () => {
@@ -69,10 +81,68 @@ const PrototypeTesting = () => {
       totalImages = initialPrototypeImages.length;
     } else if (activeImageCollection === 'paper') {
       totalImages = paperPrototypeImages.length;
+    } else if (activeImageCollection === 'poster') {
+      totalImages = posterImages.length;
     } else {
       totalImages = mockupImages.length;
     }
     setCurrentImageIndex((prev) => (prev + 1) % totalImages);
+    setZoomLevel(1);
+    setZoomPosition({ x: 0, y: 0 });
+  };
+
+  const handleWheel = (e: React.WheelEvent) => {
+    if (activeImageCollection !== 'poster') return;
+    e.preventDefault();
+    e.stopPropagation();
+    setZoomLevel((prev) => {
+      const newZoom = prev + (e.deltaY > 0 ? -0.2 : 0.2);
+      return Math.min(Math.max(newZoom, 1), 4);
+    });
+  };
+
+  const resetZoom = () => {
+    setZoomLevel(1);
+    setZoomPosition({ x: 0, y: 0 });
+  };
+
+  const zoomIn = () => {
+    setZoomLevel((prev) => Math.min(prev + 0.5, 4));
+  };
+
+  const zoomOut = () => {
+    setZoomLevel((prev) => Math.max(prev - 0.5, 1));
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (activeImageCollection !== 'poster' || zoomLevel <= 1) return;
+    setIsDragging(true);
+    setHasDragged(false);
+    setDragStart({ x: e.clientX - zoomPosition.x, y: e.clientY - zoomPosition.y });
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || activeImageCollection !== 'poster') return;
+    setHasDragged(true);
+    setZoomPosition({
+      x: e.clientX - dragStart.x,
+      y: e.clientY - dragStart.y
+    });
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleImageClick = () => {
+    if (activeImageCollection !== 'poster') return;
+    if (!hasDragged) {
+      resetZoom();
+    }
   };
 
   const goToPrevious = () => {
@@ -81,10 +151,14 @@ const PrototypeTesting = () => {
       totalImages = initialPrototypeImages.length;
     } else if (activeImageCollection === 'paper') {
       totalImages = paperPrototypeImages.length;
+    } else if (activeImageCollection === 'poster') {
+      totalImages = posterImages.length;
     } else {
       totalImages = mockupImages.length;
     }
     setCurrentImageIndex((prev) => (prev - 1 + totalImages) % totalImages);
+    setZoomLevel(1);
+    setZoomPosition({ x: 0, y: 0 });
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -406,7 +480,35 @@ const PrototypeTesting = () => {
       </section>
 
 
-      {/* Section 8: From Paper to Figma */}
+      {/* Section 5: Poster */}
+      <section className="py-12 border-b border-border">
+        <div 
+          ref={posterSection.ref}
+          className={`container mx-auto px-4 max-w-5xl scroll-animate scroll-fade-up ${posterSection.isVisible ? 'visible' : ''}`}
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+              <span className="text-xl font-bold text-primary">5</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold ml-2">Poster</h2>
+          </div>
+          
+          <div className="flex justify-center">
+            <div
+              className="rounded-lg border border-border overflow-hidden cursor-pointer hover:opacity-80 transition-opacity max-w-4xl w-full"
+              onClick={() => openLightbox(0, 'poster')}
+            >
+              <img src="/assets/poster.png" alt="ALPS Poster" className="w-full h-full object-contain max-h-128" />
+            </div>
+          </div>
+          
+          <p className="text-xl text-muted-foreground mt-6 text-center italic">
+            Click on the image to view in full size
+          </p>
+        </div>
+      </section>
+
+      {/* Section 6: From Paper to Figma */}
       <section className="py-12">
         <div 
           ref={figmaSection.ref}
@@ -414,7 +516,7 @@ const PrototypeTesting = () => {
         >
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-              <span className="text-xl font-bold text-primary">5</span>
+              <span className="text-xl font-bold text-primary">6</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold ml-2">Digital Mockup</h2>
           </div>
@@ -510,22 +612,33 @@ const PrototypeTesting = () => {
               <X className="w-6 h-6 text-black" />
             </button>
 
-            {/* Previous button */}
-            <button
-              onClick={goToPrevious}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-primary/80 hover:bg-primary rounded-full p-3 transition-colors"
-            >
-              <ChevronLeft className="w-8 h-8 text-white" />
-            </button>
+            {/* Previous button - hide for poster */}
+            {activeImageCollection !== 'poster' && (
+              <button
+                onClick={goToPrevious}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-primary/80 hover:bg-primary rounded-full p-3 transition-colors"
+              >
+                <ChevronLeft className="w-8 h-8 text-white" />
+              </button>
+            )}
 
             {/* Image */}
-            <div className="flex items-center justify-center p-8 w-full h-full">
+            <div 
+              className="flex items-center justify-center p-8 w-full h-full overflow-hidden"
+              onWheel={activeImageCollection === 'poster' ? handleWheel : undefined}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
+            >
               <img
                 src={
                   activeImageCollection === 'initial'
                     ? initialPrototypeImages[currentImageIndex].src
                     : activeImageCollection === 'paper'
                     ? paperPrototypeImages[currentImageIndex].src
+                    : activeImageCollection === 'poster'
+                    ? posterImages[currentImageIndex].src
                     : mockupImages[currentImageIndex].src
                 }
                 alt={
@@ -533,29 +646,46 @@ const PrototypeTesting = () => {
                     ? initialPrototypeImages[currentImageIndex].alt
                     : activeImageCollection === 'paper'
                     ? paperPrototypeImages[currentImageIndex].alt
+                    : activeImageCollection === 'poster'
+                    ? posterImages[currentImageIndex].alt
                     : mockupImages[currentImageIndex].alt
                 }
-                className="max-w-full max-h-full object-contain"
+                className="max-w-full max-h-full object-contain cursor-zoom-in select-none"
+                style={activeImageCollection === 'poster' ? {
+                  transform: `translate(${zoomPosition.x}px, ${zoomPosition.y}px) scale(${zoomLevel})`,
+                  cursor: zoomLevel > 1 ? (isDragging ? 'grabbing' : 'grab') : 'zoom-in',
+                  transition: isDragging ? 'none' : 'transform 0.2s'
+                } : {}}
+                onClick={handleImageClick}
+                draggable={false}
               />
             </div>
 
-            {/* Next button */}
-            <button
-              onClick={goToNext}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-primary/80 hover:bg-primary rounded-full p-3 transition-colors"
-            >
-              <ChevronRight className="w-8 h-8 text-white" />
-            </button>
+            {/* Next button - hide for poster */}
+            {activeImageCollection !== 'poster' && (
+              <button
+                onClick={goToNext}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-primary/80 hover:bg-primary rounded-full p-3 transition-colors"
+              >
+                <ChevronRight className="w-8 h-8 text-white" />
+              </button>
+            )}
 
-            {/* Image counter */}
+            {/* Image counter - hide for poster, show zoom instructions instead */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/10 px-4 py-2 rounded-full text-white text-xl">
-              {currentImageIndex + 1} / {
-                activeImageCollection === 'initial'
-                  ? initialPrototypeImages.length
-                  : activeImageCollection === 'paper'
-                  ? paperPrototypeImages.length
-                  : mockupImages.length
-              }
+              {activeImageCollection === 'poster' ? (
+                <span></span>
+              ) : (
+                <span>
+                  {currentImageIndex + 1} / {
+                    activeImageCollection === 'initial'
+                      ? initialPrototypeImages.length
+                      : activeImageCollection === 'paper'
+                      ? paperPrototypeImages.length
+                      : mockupImages.length
+                  }
+                </span>
+              )}
             </div>
           </div>
         </DialogContent>
