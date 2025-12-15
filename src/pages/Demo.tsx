@@ -1,8 +1,9 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Lightbulb, Search } from "lucide-react";
+import { ArrowRight, CheckCircle, Lightbulb, Search, Play } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
+import { useState } from "react";
 
 const journeyCards = [
     {
@@ -49,6 +50,8 @@ const journeyCards = [
 const Demo = () => {
   const journeyCardsSection = useScrollAnimation();
   const videoDemoSection = useScrollAnimation();
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  
   return (
     <div className="min-h-screen flex flex-col">
       <Navigation />
@@ -64,14 +67,32 @@ const Demo = () => {
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
               Experience ALPS in action! Watch our demo video to see how our AI-powered posture coach works in real scenarios.
             </p>
-            <div className="w-full aspect-video rounded-lg overflow-hidden border-2 border-primary/20 shadow-lg">
-              <iframe 
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/4Jk5yBU1Xx8"
-                title="ALPS Demo Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
+            <div className="w-full aspect-video rounded-lg overflow-hidden border-2 border-primary/20 shadow-lg relative">
+              {!isVideoPlaying ? (
+                <div 
+                  className="relative w-full h-full cursor-pointer group"
+                  onClick={() => setIsVideoPlaying(true)}
+                >
+                  <img 
+                    src="/assets/videocover.png" 
+                    alt="ALPS Demo Video Thumbnail"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-primary/90 group-hover:bg-primary group-hover:scale-110 transition-all flex items-center justify-center shadow-lg">
+                      <Play className="w-10 h-10 md:w-12 md:h-12 text-white ml-1" fill="white" />
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/Nzwo05rPzrs?autoplay=1&rel=0"
+                  title="ALPS Demo Video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              )}
             </div>
           </div>
         </div>
